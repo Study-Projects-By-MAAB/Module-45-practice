@@ -16,12 +16,20 @@ const Header = () => {
         }
     }
     return (
-        <div className="flex fixed top-0 bg-white w-full justify-between items-center shadow-md p-4">
-            <div className="">My Website</div>
-            <div className="flex items-center gap-6">
+        <div
+            className={`${
+                theme === "synthwave" && "bg-[#1a103d] shadow-gray-600"
+            } flex fixed z-20 top-0 bg-white w-full justify-between items-center shadow-md p-4`}>
+            <NavLink to="/" className="btn bg-transparent border-0 shadow-none font-bold">
+                My Website
+            </NavLink>
+            <ul className="flex items-center gap-6">
                 <nav className="flex gap-3 *:p-2 *:font-bold">
                     <NavLink to="/" className={({ isActive }) => isActive && "bg-error rounded-md "}>
                         Home
+                    </NavLink>
+                    <NavLink to="/meals" className={({ isActive }) => isActive && "bg-error rounded-md "}>
+                        Meals
                     </NavLink>
                     <NavLink to="/about" className={({ isActive }) => isActive && "bg-error rounded-md "}>
                         About
@@ -33,7 +41,7 @@ const Header = () => {
                 <div className="flex">
                     <input onChange={handleTheme} type="checkbox" value="synthwave" className="toggle  theme-controller" />
                 </div>
-            </div>
+            </ul>
         </div>
     )
 }
