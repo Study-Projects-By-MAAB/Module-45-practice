@@ -8,6 +8,7 @@ import Footer from "./components/Footer/Footer.jsx"
 import Home from "./pages/Home/Home.jsx"
 import Contact from "./pages/Contact/Contact.jsx"
 import Meals from "./pages/Meals/Meals.jsx"
+import ShowMealDetails from "./pages/ShowMealDetails/ShowMealDetails.jsx"
 
 const router = createBrowserRouter([
     {
@@ -24,12 +25,13 @@ const router = createBrowserRouter([
             },
             {
                 path: "/meals",
-                loader:()=> fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood#"),
+                loader: () => fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood#"),
                 element: <Meals></Meals>,
             },
             {
-                path:"/meal",
-                // element:
+                path: "/meals/:mealId",
+                loader: ({ params }) => fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.mealId}`),
+                element: <ShowMealDetails></ShowMealDetails>,
             },
             {
                 path: "/contact",
