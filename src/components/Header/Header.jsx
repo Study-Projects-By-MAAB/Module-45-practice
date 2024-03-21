@@ -18,8 +18,8 @@ const Header = () => {
     return (
         <div
             className={`${
-                theme === "synthwave" && "bg-[#1a103d] shadow-gray-600"
-            } flex fixed z-20 top-0 bg-white w-full justify-between items-center shadow-md p-4`}>
+                theme === "synthwave" ? "bg-[#1a103d] shadow-gray-600" : "bg-white"
+            } flex fixed z-20 top-0  w-full justify-between items-center shadow-md p-4`}>
             <NavLink to="/" className="btn bg-transparent border-0 shadow-none font-bold">
                 My Website
             </NavLink>

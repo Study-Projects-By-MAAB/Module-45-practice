@@ -8,7 +8,7 @@ const Meal = ({ meal }) => {
         navigate(`/meals/${idMeal}`)
     }
     return (
-        <div className="flex flex-col h-full gap-6">
+        <div className="flex flex-col h-full gap-6 border rounded-xl p-4">
             <div className="">
                 <img className="w-96 rounded-xl mx-auto" src={strMealThumb} alt="" />
             </div>
